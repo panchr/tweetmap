@@ -1,5 +1,5 @@
 {
-  "name": "EcoCat",
+  "name": "TweetMap",
   "version": "0.1.0",
   "author": "panchr",
   "private": true,
@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "express": "4.13.2",
-    "twitter": "*",
+    "twitter": "1.2.5",
     "socket.io": "1.3.6"
   }
 }
