@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "express": "4.13.2",
-    "twitter": "1.2.5",
+    "twitter": "*",
     "socket.io": "1.3.6"
   }
 }
