@@ -23,6 +23,37 @@ console.log(process.env.PORT + "here is the port");
 
 //Setup rotuing for app
 app.use(express.static(__dirname + '/public'));
+app.get("/click_location", function (req, res) {
+    http.get("http://dev.virtualearth.net/REST/v1/Locations/" + req.query.lat +"," + req.query.lng + "?o=json&key=AlSMj9XqxPE-RE093Giz35PK-ryTSeZ8xDcqcdS2DeDYvE215ibf-u5VqKq7e_Xn", function (response) {
+            var body = '';
+            response.on('data', function(d) {
+              body += d;
+            });
+            response.on('end', function() {
+              var parsed = JSON.parse(body);
+              location = parsed.resourceSets[0];
+              if (location.estimatedTotal > 0) {
+                var locationName = location.resources[0].name;
+                 locationURL = "https://www.bing.com/search?q=" + encodeURIComponent(locationName);
+                 http.get(locationURL, function (response2) {
+                  var body2 = '';
+                    response2.on('data', function(d) {
+                      body2 += d;
+                    });
+                    response2.on('end', function() {
+                      res.send(body2);
+                    });
+                  });
+              }
+              else {
+                return res.send("Location not found.");
+              }
+            });
+    });
+  });
+app.get("/location_data", function (req, res) {
+
+});
 
 //Create web sockets connection.
 io.sockets.on('connection', function (socket) {

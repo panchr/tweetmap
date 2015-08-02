@@ -15,6 +15,15 @@ function initialize() {
   };
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
   
+// google.maps.event.addListener(map, "click", function(event) {
+//     var lat = event.latLng.lat();
+//     var lng = event.latLng.lng();
+//     $.getJSON("/click_location?lat=" + lat + "&lng=" + lng).complete(function(data) {
+//         $("#location-info").css('display', 'block');
+//         $("#location-info .info").empty().html(data.responseText);
+//     });
+// });
+
   //Setup heat map and link to Twitter array we will append data to
   var heatmap;
   var liveTweets = new google.maps.MVCArray();
@@ -59,3 +68,7 @@ function initialize() {
     });
   }
 }
+
+$("map_canvas").click(function (e) {
+
+  });

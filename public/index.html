@@ -33,6 +33,12 @@
 				margin-left: auto;
 				margin-right: auto;
 				}
+			#location-info {
+				position: fixed;
+				display: none;
+				width: 50vw;
+				height: 50vh;
+				}
 		</style>
 	</head>
 	<body onload = "initialize()">
@@ -47,6 +53,11 @@
 			<div id="main">
 				<div class="container">
 					<div id="map_canvas"></div>
+				</div>
+				<div id="location-info">
+					<div class="info"></div>
+					<br/>
+					<button class="button" action = "$('#location-info').css('display', 'none');">Close</button>
 				</div>
 			</div>
 
