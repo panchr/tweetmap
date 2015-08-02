@@ -26,7 +26,7 @@ function initialize() {
 
   if(io !== undefined) {
     // Storage for WebSocket connections
-    var socket = io.connect('http://ecocat1.azurewebsites.net/');
+    var socket = io.connect();
 
     // This listens on the "twitter-steam" channel and data is 
     // received everytime a new tweet is receieved.
