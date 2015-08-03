@@ -1,6 +1,9 @@
 # Created by https://www.gitignore.io
 
 ### Node ###
+# Run script
+run.js
+
 # Logs
 logs
 *.log
